@@ -26,18 +26,18 @@ var walls = [
 
 // Create a new astar object
 // This initializes an empty grid with the size of mapSize
-var aStar = new aStar(mapSize, mapSize)
+var aS = new aStar(mapSize, mapSize)
 
 // Set walls
-aStar.setWalls(walls)
+aS.setWalls(walls)
 
 // Set s start position
-aStar.setStartPosition(startPosition.x, startPosition.y)
+aS.setStartPosition(startPosition.x, startPosition.y)
 
 // Set a target position
-aStar.setTargetPosition(targetPosition.x, targetPosition.y)
+aS.setTargetPosition(targetPosition.x, targetPosition.y)
 
 // Get the path
-var path = aStar.getPath()
+var path = aS.getPath()
 
 ```
