@@ -11,33 +11,55 @@ The walls / obstacles covers an entire cell.
 
 ```javascript
 // Prepare size and positions
-var mapSize = 9,
+const mapSize = 9,
     startPosition = {x: 0, y: 5},
     targetPosition = {x: 8, y: 7}
 
 // Prepare some walls
 // Wall takes two parameters: x- and y coordinate
-var walls = [
-    new Wall(5, 5),
-    new Wall(5, 6),
-    new Wall(5, 7),
-    new Wall(5, 8)
+const obstacles = [
+    { x: 5, y: 4 },
+    { x: 5, y: 5 },
+    { x: 5, y: 6 },
+    { x: 5, y: 7 },
+    { x: 5, y: 8 }
 ]
 
 // Create a new astar object
 // This initializes an empty grid with the size of mapSize
-var aS = new aStar(mapSize, mapSize)
+const aS = new Astar(mapSize, mapSize)
 
 // Set walls
-aS.setWalls(walls)
-
-// Set s start position
-aS.setStartPosition(startPosition.x, startPosition.y)
-
-// Set a target position
-aS.setTargetPosition(targetPosition.x, targetPosition.y)
+aS.setObstacles(obstacles)
 
 // Get the path
-var path = aS.getPath()
+const path = aS.getPath(startPosition, targetPosition)
+
+```
+
+#### Graph
+
+You can also get out a debug graph for the path it finds.
+
+```javascript
+// Get the path
+const aS = new Astar(mapSize, mapSize)
+const path = aS.getPath(startPosition, targetPosition)
+
+// Get the graph
+const graph = aS.graph(path)
+
+/*
+ * Will output this: 
+OOOOOOOOO
+OOOOOOOOO
+OOOOOOOOO
+#########
+#OOOOXOO#
+OOOOOXOO#
+OOOOOXOO#
+OOOOOXOO#
+OOOOOXOOO
+*/
 
 ```
