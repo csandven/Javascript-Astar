@@ -51,6 +51,7 @@ const graph = aS.graph(path)
 
 /*
  * Will output this: 
+ * Where the O's are free cells, X's are obstacles and # are the path
 OOOOOOOOO
 OOOOOOOOO
 OOOOOOOOO
